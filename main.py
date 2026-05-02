@@ -25,7 +25,7 @@ HEIGHT_EXPANDED = 650
 class HotkeyWorker(QThread):
     triggered = pyqtSignal()
     def run(self):
-        with keyboard.GlobalHotKeys({'<ctrl>+<shift>': self.on_activate}) as h:
+        with keyboard.GlobalHotKeys({'<ctrl>+<alt>+<space>': self.on_activate}) as h:
             h.join()
     def on_activate(self):
         self.triggered.emit()
